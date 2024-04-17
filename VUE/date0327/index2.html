@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调查问卷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            padding-top:3vh;
+            padding-left:5vw;
+
+        }
+        *{
+            margin:0;padding:0;
+        }
+        .boxMin{
+            border:1px red solid;
+            width:90vw;
+            height:5vh;
+            line-height:5vh;
+        }
+        .boxMin input{
+            width:6vw;
+            height:6vw;
+            border-radius:50%;
+
+        }
+        table{
+            border:1px solid rgba(0, 0, 0, 0.202);
+            width:90vw;
+            border-spacing: 0;
+            margin-bottom:9vh;
+            border-bottom:3vh solid rgba(251, 2, 255, 0.14);
+            border-top:1px solid rgba(251, 2, 255, 0.14);
+            border-left:0;
+            border-right:0;
+        }
+        tr{
+            height:5vh;
+
+        }
+        td,th{
+            border-bottom:1px solid rgba(251, 2, 255, 0.14);
+            border-left:0;
+            border-right:0;
+            padding:2vw;
+            text-align: left;
+            color:rgba(0, 0, 0, 0.61);
+        }
+        .td1{
+            width:1vw;
+        }
+        h4{
+            margin-bottom:2vh;
+        }
+        input[type="radio"]{
+            appearance: none;
+            width:3vw;
+            height:3vw;
+            border-radius:50%;;
+            outline:2px rgba(251, 2, 255, 0.14) solid;
+        }
+        input[type="radio"]:checked{
+            background:rgba(251, 2, 255, 0.14);
+        }
+        h3{
+            color:rgba(251, 2, 255, 0.291);
+            margin-bottom:6vh;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<section>
+        <h3>大学生就业调查问卷</h3>
+        <table>
+            <h4><span style="color:red">*</span>01 您现在是？</h4>
+            <tr>
+                <td class="td1"><input type="radio" name="a"></td>
+                <td>大一</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="a"></td>
+                <td>大二</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="a"></td>
+                <td>大三</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="a"></td>
+                <td>大四</td>
+            </tr>
+        </table>
+
+        <!-- 问卷2 -->
+        <table>
+            <h4><span style="color:red">*</span>02 您的平均自习时间是多少？</h4>
+            <tr>
+                <td class="td1"><input type="radio" name="b"></td>
+                <td>不到1小时</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="b"></td>
+                <td>1小时到3小时</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="b"></td>
+                <td>3小时到5小时</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="b"></td>
+                <td>5小时以上</td>
+            </tr>
+        </table>
+
+        <!-- 问卷3 -->
+        <table>
+            <h4><span style="color:red">*</span>03 您希望的就业地区？</h4>
+            <tr>
+                <td class="td1"><input type="radio" name="c"></td>
+                <td>北上广</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="c"></td>
+                <td>西部</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="c"></td>
+                <td>其他二三线城市</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="c"></td>
+                <td>乡村</td>
+            </tr>
+        </table>
+
+        <!-- 问卷4 -->
+        <table>
+            <h4><span style="color:red">*</span>04 您希望刚毕业的自己可拿多少工资？</h4>
+            <tr>
+                <td class="td1"><input type="radio" name="d"></td>
+                <td>2000元</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="d"></td>
+                <td>3000元以下</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="d"></td>
+                <td>3001-5000元</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="d"></td>
+                <td>8000元以上</td>
+            </tr>
+        </table>
+
+        <!-- 问卷5 -->
+        <table>
+            <h4><span style="color:red">*</span>05 您心中的当下就业形势？</h4>
+            <tr>
+                <td class="td1"><input type="radio" name="e"></td>
+                <td>严峻</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="e"></td>
+                <td>前景不明朗</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="e"></td>
+                <td>不确定</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="e"></td>
+                <td>就业形势好</td>
+            </tr>
+        </table>
+
+        <!-- 问卷6 -->
+        <table>
+            <h4><span style="color:red">*</span>06 您觉得相貌对就业的影响？</h4>
+            <tr>
+                <td class="td1"><input type="radio" name="f"></td>
+                <td>大一</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="f"></td>
+                <td>大二</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="f"></td>
+                <td>大三</td>
+            </tr>
+            <tr>
+                <td class="td1"><input type="radio" name="f"></td>
+                <td>大四</td>
+            </tr>
+        </table>
+    </div>
+</section>
+</body>
+</html>

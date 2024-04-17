@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="app" @click="opt">{{msg|oue}}</div>
+
+    <script>
+        var vm = new Vue({
+            el:'.app',
+            data:{
+                msg:'我操你妈!'
+            },    
+            filters:{
+                oue(value){
+                   return value.replace('操你妈','***');
+                    
+                }
+            },
+            methods:{
+                opt(e){
+                    alert('你点击了'+String(e.target))
+                }
+            }
+        })
+    </script>
+</body>
+</html>

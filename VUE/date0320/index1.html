@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            border:1px solid black;
+        }
+        .gree{
+            background-color: green;
+        }
+        .bo{
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:class="classB"></div>
+        <div :style="DivStyle"></div>
+        <div v-bind:class="['gree','box']"></div>
+        <div v-bind:class="t"></div>
+    </div>
+    <script>
+        var vu = new Vue({
+            el:'#app',
+            data:{
+                DivStyle:{
+                    width:"100px",
+                    height:"100px",
+                    marginTop:"100px",
+                    border:"1px solid red"
+                },
+                classB:'box',
+                t:['bo','box']
+            },
+        })
+    </script>
+</body>
+</html>

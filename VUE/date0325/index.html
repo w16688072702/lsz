@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <style>
+        *{padding:0;margin:0;}
+        ul{list-style:none}
+        .rating-list{
+            display:flex;
+            justify-content: center;
+            margin-top:16px;
+        }
+        .rating-list-item{
+            width:24px;
+            height:24px;
+            margin:0 16px;
+            background-position: 0 0;
+            background-size:100% 100% ;
+        }
+        .on{background-image:url(./img/star48_on@2x.png)}
+        .half{background-image:url(./img/star48_half@2x.png)}
+        .off{background-image:url(./img/star48_off@2x.png)}
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+       <ul class="rating-list">
+        
+        <li class="rating-list-item on" v-for="i in onCound"></li>
+        <li class="rating-list-item half" v-for="i in halfCound"></li>
+        <li class="rating-list-item off" v-for="i in offCound"></li>
+       </ul> 
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                scoll:4.5,
+            },
+            computed:{
+                onCound(){
+                    return Math.floor(Math.round(this.scoll*2)/2)
+                },
+                halfCound(){
+                    if(Math.floor(this.scoll*2)/2==Math.floor(Math.round(this.scoll*2)/2)){
+                        return 0;
+                    }else{
+                        return 1;
+                    }
+                },
+                offCound(){
+                    return 5-this.onCound-this.halfCound
+                }
+            }
+        })
+    </script>
+</body>
+</html>

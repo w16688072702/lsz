@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="count--">-</button>
+        {{count}}
+        <button v-on:click="countOn()">+</button>
+        <button v-on:click="countOn5()">+</button>
+        <button v-on:click="count++">+</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                count:0
+            },
+            methods:{
+                countOn(){
+                    return this.count++
+                },
+                countOn5(){
+                    return this.count+=5
+                }
+            }
+        })
+    </script>
+</body>
+</html>

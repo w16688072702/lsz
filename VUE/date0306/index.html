@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg|format("-")}}
+    </div>
+    <script>
+        var ve = new Vue({
+            el:"#app",
+            data:{msg:1709686046},
+            filters:{
+                format(value,or){
+                    var date = new Date(value)
+                    var year = date.getFullYear();
+                    var Mon = date.getMonth()+1;
+                    var day = date.getDay();
+                    var Hours = date.getHours();
+                    var Min = date.getMinutes();
+                    Mon=Mon<10?"0"+Mon:Mon
+                    day=day<10?"0"+day:day
+                    Hours=Hours<10?"0"+Hours:Hours
+                    Min=Min<10?"0"+Min:Min
+                    return year+or+Mon+or+day+"  "+Hours+":"+Min
+                }
+            }
+        })
+    </script>
+</body>
+</html>

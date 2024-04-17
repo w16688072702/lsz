@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li  v-for="item in arrs">{{item}}</li>
+        </ul>
+        
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"Hello",
+                msg1:"Hi",
+                flag: false,
+                arrs:["油闷大虾","油淋茄子","小炒牛肉","铁锅炖大鹅"]
+            }
+        });
+    </script>
+</body>
+</html>

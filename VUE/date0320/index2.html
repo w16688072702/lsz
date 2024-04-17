@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in namearr">
+                <span>{{item.name}}</span><img :src="item.imageurl" alt="">
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{namearr:[{name:'1',imageurl:'img/1.jpg'},
+                {name:'2',imageurl:'img/2.jpg'},
+                {name:'3',imageurl:'img/3.jpg'}]
+                
+            }
+        })
+    </script>
+</body>
+</html>

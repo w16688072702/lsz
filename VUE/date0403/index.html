@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <style>
+        .v-enter,.v-leave-to{
+            opacity:0;
+            transform:translateX(30px)
+        }
+        .v-enter-active,.v-leave-active{
+            transition:1s;
+        }
+        .v-enter-to,.v-leave{
+            opacity:1;
+            transform:translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>用户名：<input type="text" v-model="username"></p>
+        <transition mode="out-in">
+            <p v-if="username" key="1">ok!</p>
+            <p v-else key="2">请输入用户名</p>
+        </transition>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                username:''
+            }
+        })
+    </script>
+</body>
+</html>

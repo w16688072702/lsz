@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:50px;
+            background:red;
+        }
+        /* .v-enter,.v-leave-to{
+            width:0;
+        }
+        .v-enter-active,.v-leave-active{
+            transition:width 1s linear;
+        } */
+        .v-leave-active{
+            animation:widthchange 3s ease-out reverse;
+        }
+        .v-enter-active{
+            animation:widthchange 3s ease-out;
+        }
+        @keyframes widthchange{
+            0%{
+                width:0;
+            }100%{
+                width:200px
+            }
+        }
+    </style>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="submit" @click="showApp()"><br>
+        <transition>
+        <div v-if="show" class="box"></div>
+    </transition>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                show:true
+            },
+            methods:{
+                showApp(){
+                    this.show=!this.show
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">
+    <input type="checkbox" v-model="only">只看有评价的评论<br>
+    喜欢哪些小料：<br>
+    <input type="checkbox" value="juk" v-model="like">果汁<br>
+    <input type="checkbox" value="niu" v-model="like">牛奶<br>
+    <input type="checkbox" value="le" v-model="like">可乐<br>
+    like:{{like}} <br>
+    <input type="radio" name="sex" v-model="sex" value="man">男<br>
+    <input type="radio" name="sex" v-model="sex" value="gila">女<br>
+    sex:{{sex}} <br>
+    用户名<input type="text"  v-model.lazy="username">{{username}}
+    <br> 
+    <input type="text" v-model.number="val1">+<input type="text" v-model.number="val2">{{val1+val2}}
+    <p>
+        <button type="button" v-if="acced">注册</button>
+        <button type="button" v-else>您还没有接受条约</button><br>
+        <input type="checkbox" v-model="acced" value="">隐私条约
+    </p>
+    <input type="text" v-model.number="rool">
+   <div v-if="rool==1">管理员</div>
+   <div v-else-if="rool==2">注册用户</div>
+   <div v-else-if="rool==3">游客</div>
+   <div v-else>未知用户</div>
+   <input type="button" v-show="acced1" value="注册">
+   <input type="checkbox" v-model="acced1" value="接受条款">接受条款
+   </div> 
+   
+   <script>
+    var vu = new Vue({
+        el:'#app',
+        data:{
+            only:true,
+            like:[],
+            sex:'',
+            username:'',
+            val1:'',
+            val2:'',
+            acced:false,
+            rool:undefined,
+            acced1:true,
+        },
+    })
+   </script>
+</body>
+</html>

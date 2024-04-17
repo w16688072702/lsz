@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <style>
+        .list-enter,.list-leave-to{
+            opacity:0;
+            transform:translateY(30px)
+        }
+        .list-enter-active,.list-leave-active{
+            transition:1s;
+        }
+        .list-enter-to,.list-leave{
+            opacity:1;
+            transform:translateY(0);
+        }
+        .list-item{
+            display:inline-block;width:30px;height:30px;background:green;color:#fff;
+            text-align:center;line-height:30px;margin:5px;
+        }
+        .list-move{
+            transition:transform 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="add">添加</button>
+        <button @click="remove">删除</button>
+        <transition-group tag="div" name="list">
+            <span v-for="item in items" v-bind:key="item" class="list-item">
+                {{item}}
+            </span>
+        </transition-group>
+        <script>
+            var vm = new Vue({
+                el:'#app',
+                data:{
+                    items:[1,2,3,4,5,6,7,8],
+                    nextNum:9
+                },
+                methods:{
+                    randomIndex:function(){
+                        return Math.floor(Math.random()*this.items.length)
+                    },
+                    add(){
+                        this.items.splice(this.randomIndex(),0,this.nextNum)
+                        this.nextNum++
+                    },
+                    remove(){
+                        this.items.splice(this.randomIndex(),1)
+                    }
+                }
+            })
+        </script>
+    </div>
+</body>
+</html>

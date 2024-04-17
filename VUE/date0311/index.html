@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table border="1">
+        <tr>
+            <td>编号</td>
+            <td>物品名称</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>小计</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>铅笔</td>
+            <td>{{price}}</td>
+            <td>
+                <button v-on:click="dec">-</button>{{count}}<button v-on:click="int">+</button></td>
+            <td>{{comput}}</td>
+        </tr>
+        </table>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                price:2,
+                count:0,
+            },
+            methods:{
+                dec(){
+                    if(count<0)
+                        this.count--
+                },
+                int(){
+                    this.count++
+                }
+            },
+            computed:{
+                comput(){
+                    return this.count*this.price
+                }
+            },
+            watch:{
+                count(newV,oldV){
+                    if(this.count<0){
+                        alert("数量不能为0")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

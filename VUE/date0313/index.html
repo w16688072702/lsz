@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <ul v-if="isLogn">
+            <li>{{msg}}</li>
+        </ul>
+        <div v-else>加载中·····</div>
+        <p ref="box">box</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                msg:"hello",
+                isLogn:false
+            },
+            created(){
+                var that=this
+                setTimeout(function(){
+                    this.msg="成功！"
+                    that.isLogn=true
+                },3000)
+            },
+            mounted(){
+                console.log(this.$refs.box.innerHTML)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p><input type="text" v-bind:value="vname" name="username"></p>
+        <p><input type="password" v-bind:value="vpass" name="password"></p>
+        <p><input type="checkbox" v-mod>
+        </p>
+    </div>
+    <script>
+        var vu = new Vue({
+            el:"#app",
+            data:{
+                vname:'lu',
+                vpass:'pass'
+            },
+        })
+
+    </script>
+</body>
+</html>
